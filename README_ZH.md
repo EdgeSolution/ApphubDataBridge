@@ -75,10 +75,10 @@ public class MyAppHubDataBridgeClient extends AppHubDataBridgeClient {
 
 ## reportData
 用你实现类的对象调用reportDataSync或reportDataAsync方法向cloud应用程序发送数据
-### reportDataSync方法
+### reportDataSync(ReportData data)方法
 reportDataSync()方法发送数据时,会等待cloud应用的回应,可能会耗时,因此不能在主线程中调用
-### reportDataAsync方法
-int reportDataAsync(ReportData data)方法发送数据时,数据发送到Apphub Agent后就会立即返回,所以cloud应用接收到数据的时机无法确定
+### reportDataAsync(ReportData data)方法
+int reportDataAsync()方法发送数据时,数据发送到Apphub Agent后就会立即返回,所以cloud应用接收到数据的时机无法确定
 
 
 # Sample
