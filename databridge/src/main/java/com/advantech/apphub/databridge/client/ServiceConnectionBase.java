@@ -6,8 +6,11 @@ import android.util.Log;
 
 /**
  * ClassName:   ServiceConnectionBase
- * Description: TODO
+ * Description: The base class of service connection is used to simplify the steps and logic of
+ * *           Apphub databridge client (that is SolutionApp) binding Apphub databridge
+ * *           service
  * CreateDate   2021/08/19
+ * Author:  fengchao.dai@advantech.com.cn
  */
 public abstract class ServiceConnectionBase implements ServiceConnection {
     private String LOG_TAG = "SDK UnknownSrvConn";

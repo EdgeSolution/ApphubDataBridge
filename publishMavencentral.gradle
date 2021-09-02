@@ -1,0 +1,71 @@
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+def PUBLISH_GROUP_ID = 'io.github.EdgeSolution'
+def PUBLISH_ARTIFACT_ID = "databridge"
+def PUBLISH_VERSION = android.defaultConfig.versionName
+
+def POM_PROJECT_PACKAGING = 'jar'
+def POM_PROJECT_DESCRIPTION = 'This is a development library for implementing apphub solution app'
+def POM_PROJECT_URL = 'https://github.com/EdgeSolution/ApphubDataBridge'
+
+def SCM_CONNECTION = 'scm:git:github.com/EdgeSolution/ApphubDataBridge.git'
+def SCM_DEVELOPER_CONNECTION = 'scm:git:ssh://github.com/EdgeSolution/ApphubDataBridge.git'
+def SCM_URL = 'https://github.com/EdgeSolution/ApphubDataBridge/tree/main'
+
+def DEVELOPER_ID = 'DaiFengchao'
+def DEVELOPER_NAME = 'fengchao'
+def DEVELOPER_EMAIL = 'daifengchao@sina.com'
+
+signing {
+    required { gradle.taskGraph.hasTask("uploadArchives") }
+    sign configurations.archives
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            repository(url: "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            pom.groupId = PUBLISH_GROUP_ID
+            pom.artifactId = PUBLISH_ARTIFACT_ID
+            pom.version = PUBLISH_VERSION
+
+            pom.project {
+                name PUBLISH_ARTIFACT_ID
+                packaging POM_PROJECT_PACKAGING
+                description POM_PROJECT_DESCRIPTION
+                url POM_PROJECT_URL
+
+                scm {
+                    connection = SCM_CONNECTION
+                    developerConnection = SCM_DEVELOPER_CONNECTION
+                    url = SCM_URL
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id DEVELOPER_ID
+                        name DEVELOPER_NAME
+                        email DEVELOPER_EMAIL
+                    }
+                }
+            }
+        }
+    }
+}

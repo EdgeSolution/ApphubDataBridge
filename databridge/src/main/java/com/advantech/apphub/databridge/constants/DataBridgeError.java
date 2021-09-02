@@ -2,11 +2,13 @@ package com.advantech.apphub.databridge.constants;
 
 /**
  * ClassName:   DataBridgeError
- * Description: TODO
+ * Description: Some common error codes are defined, and users can add their own error codes on this basis
  * CreateDate   2021/08/26
+ * Author:  fengchao.dai@advantech.com.cn
  */
 public class DataBridgeError {
     public static final int DATABRIDGE_ERR_NO_ERROR = 0;
+
     public static final int DATABRIDGE_ERR_UNKNOWN_ERROR = 1;
     public static final int DATABRIDGE_ERR_OPERATION_NOT_ALLOWED = 2;
     public static final int DATABRIDGE_ERR_UNKNOWN_FUNCID = 3;

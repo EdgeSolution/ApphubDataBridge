@@ -9,8 +9,10 @@ import com.advantech.apphub.databridge.service.IDataBridgeService;
 
 /**
  * ClassName:   AppHubDataBridgeServiceConnection
- * Description: TODO
+ * Description: An abstract class is used to control and feedback the connection status of
+ * *           Apphub databridge service and Apphub databridge client (that is SolutionApp)
  * CreateDate   2021/08/23
+ * Author:  fengchao.dai@advantech.com.cn
  */
 public abstract class AppHubDataBridgeServiceConnection extends ServiceConnectionBase {
     private static final String TAG = "AppHubDataBridgeServiceConnection";

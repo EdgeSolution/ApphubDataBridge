@@ -7,14 +7,32 @@ import androidx.annotation.NonNull;
 
 /**
  * ClassName:   ReportData
- * Description: TODO
+ * Description: This class defines a report data format. It is used by SolutionApp to
+ * *           actively send data to web applications through Apphub databridge.
  * CreateDate   2021/08/20
+ * Author:  fengchao.dai@advantech.com.cn
  */
 public class ReportData implements Parcelable {
-    //Fields
+
+    /**
+     * The package name of SolutionApp, which is used to indicate to the apphub databridge
+     * and the web application which application the data comes from
+     */
     private String pkgName;
+
+
+    /**
+     * Function name, used to indicate the type of event reported to the apphub databridge
+     * and web application
+     */
     private String functionId;
+
+
+    /**
+     * Data content sent
+     */
     private String content;
+
 
     //Clone object method.
     public void copyFrom(ReportData obj) {
@@ -27,30 +45,6 @@ public class ReportData implements Parcelable {
     public ReportData(@NonNull String pkgName, String functionId, String content) {
         this.pkgName = pkgName;
         this.functionId = functionId;
-        this.content = content;
-    }
-
-    public String getPkgName() {
-        return pkgName;
-    }
-
-    public void setPkgName(String pkgName) {
-        this.pkgName = pkgName;
-    }
-
-    public String getFunctionId() {
-        return functionId;
-    }
-
-    public void setFunctionId(String functionId) {
-        this.functionId = functionId;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
         this.content = content;
     }
 
@@ -88,6 +82,30 @@ public class ReportData implements Parcelable {
                     return new ReportData[size];
                 }
             };
+
+    public String getPkgName() {
+        return pkgName;
+    }
+
+    public void setPkgName(String pkgName) {
+        this.pkgName = pkgName;
+    }
+
+    public String getFunctionId() {
+        return functionId;
+    }
+
+    public void setFunctionId(String functionId) {
+        this.functionId = functionId;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 
     @Override
     public String toString() {

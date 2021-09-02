@@ -7,14 +7,34 @@ import androidx.annotation.NonNull;
 
 /**
  * ClassName:   ParameterData
- * Description: TODO
+ * Description:  This class defines a parameter data, which is passed to SolutionApp by
+ * *           the web application through the apphub databridge. It is used for the web
+ * *           application to set or obtain data from SolutionApp
  * CreateDate   2021/08/20
+ * Author:  fengchao.dai@advantech.com.cn
  */
 public class ParameterData implements Parcelable {
-    //Fields
+
+    /**
+     * The package name of SolutionApp, used to indicate to Apphub databridge
+     * that the data is to be forwarded to that application
+     */
     private String pkgName;
+
+
+    /**
+     * Function name, which is used to explain to solutionapp which operation
+     * the web application needs solutionapp to perform
+     */
     private String functionId;
+
+
+    /**
+     * Other parameters, used for extra parameters passed by the web application
+     * to SolutionApp, generally in Json format
+     */
     private String otherParams;
+
 
     //Clone object method.
     public void copyFrom(ParameterData obj) {
@@ -30,30 +50,6 @@ public class ParameterData implements Parcelable {
     public ParameterData(@NonNull String pkgName, String functionId, String otherParams) {
         this.pkgName = pkgName;
         this.functionId = functionId;
-        this.otherParams = otherParams;
-    }
-
-    public String getPkgName() {
-        return pkgName;
-    }
-
-    public void setPkgName(String pkgName) {
-        this.pkgName = pkgName;
-    }
-
-    public String getFunctionId() {
-        return functionId;
-    }
-
-    public void setFunctionId(String functionId) {
-        this.functionId = functionId;
-    }
-
-    public String getOtherParams() {
-        return otherParams;
-    }
-
-    public void setOtherParams(String otherParams) {
         this.otherParams = otherParams;
     }
 
@@ -91,6 +87,30 @@ public class ParameterData implements Parcelable {
                     return new ParameterData[size];
                 }
             };
+
+    public String getPkgName() {
+        return pkgName;
+    }
+
+    public void setPkgName(String pkgName) {
+        this.pkgName = pkgName;
+    }
+
+    public String getFunctionId() {
+        return functionId;
+    }
+
+    public void setFunctionId(String functionId) {
+        this.functionId = functionId;
+    }
+
+    public String getOtherParams() {
+        return otherParams;
+    }
+
+    public void setOtherParams(String otherParams) {
+        this.otherParams = otherParams;
+    }
 
     @Override
     public String toString() {
