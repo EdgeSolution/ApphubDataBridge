@@ -75,10 +75,10 @@ Complete the business logic related to setting data and obtaining data in the se
 
 ## reportData
 Call the reportdatasync or reportDataAsync method with the object of your implementation class to send data to the cloud application 
-### reportDataSync方法
-When reportDataSync () sends data, it will wait for the response from the cloud application,  it may take time, so it can not be invoked in the main thread. 
-### reportDataAsync方法
-When the reportDataAsync () method sends data, the data will be returned immediately after it is sent to the apphub agent, so the time when the cloud application receives the data cannot be determined 
+### reportDataSync(ReportData data) method
+When reportDataSync() sends data, it will wait for the response from the cloud application,  it may take time, so it can not be invoked in the main thread. 
+### reportDataAsync(ReportData data) method
+When the reportDataAsync() method sends data, the data will be returned immediately after it is sent to the apphub agent, so the time when the cloud application receives the data cannot be determined 
 
 
 # Sample
