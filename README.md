@@ -17,7 +17,7 @@ implementation 'io.github.EdgeSolution:databridge:1.0.2'
 
 ##  Implement abstract class
 Write an implementation class that extends from the AppHubDataBridgeClient abstract class and implements setValue and getValue methods 
-````
+````java
 public class MyAppHubDataBridgeClient extends AppHubDataBridgeClient {
     private String tag;
     private Handler handler;
@@ -45,7 +45,7 @@ public class MyAppHubDataBridgeClient extends AppHubDataBridgeClient {
 ````
 
 ## Initialization
-````
+````java
     private MyAppHubDataBridgeClient myAppHubDataBridgeClient;
 
     AppHubDataBridgeServiceConnection dataBridgeServiceConnection = new AppHubDataBridgeServiceConnection("LOG_TAG") {
