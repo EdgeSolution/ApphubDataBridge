@@ -69,15 +69,15 @@ public class MyAppHubDataBridgeClient extends AppHubDataBridgeClient {
         myAppHubDataBridgeClient.bindDataBridgeService(dataBridgeServiceConnection);
     }
 ````
-
-## 云端应用向本地应用设置/获取数据
+## 主要功能
+### 云端应用向本地应用设置/获取数据
 在你的继承类的setValue和getValue方法中完成设置数据和获取数据的相关的业务逻辑
 
-## 本地应用向云端应用主动上报数据
+### 本地应用向云端应用主动上报数据
 用你实现类的对象调用reportDataSync或reportDataAsync方法向cloud应用程序发送数据
-### reportDataSync(ReportData data)方法
+#### reportDataSync(ReportData data)方法
 reportDataSync()方法发送数据时,会等待cloud应用的回应,可能会耗时,因此不能在主线程中调用
-### reportDataAsync(ReportData data)方法
+#### reportDataAsync(ReportData data)方法
 int reportDataAsync()方法发送数据时,数据发送到Apphub Agent后就会立即返回,所以cloud应用接收到数据的时机无法确定
 
 

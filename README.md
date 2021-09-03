@@ -70,14 +70,15 @@ public class MyAppHubDataBridgeClient extends AppHubDataBridgeClient {
     }
 ````
 
-## setValue and getValue
+## Main function
+###  Cloud Applications set/get data from local applications 
 Complete the business logic related to setting data and obtaining data in the setValue and getValue methods of your inherited class 
 
-## reportData
+###  Local applications actively report data to cloud applications 
 Call the reportdatasync or reportDataAsync method with the object of your implementation class to send data to the cloud application 
-### reportDataSync(ReportData data) method
+#### reportDataSync(ReportData data) method
 When reportDataSync() sends data, it will wait for the response from the cloud application,  it may take time, so it can not be invoked in the main thread. 
-### reportDataAsync(ReportData data) method
+#### reportDataAsync(ReportData data) method
 When the reportDataAsync() method sends data, the data will be returned immediately after it is sent to the apphub agent, so the time when the cloud application receives the data cannot be determined 
 
 
