@@ -3,8 +3,6 @@ package com.advantech.apphub.databridge.constants;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import androidx.annotation.NonNull;
-
 /**
  * ClassName:   ParameterData
  * Description:  This class defines a parameter data, which is passed to SolutionApp by
@@ -47,7 +45,7 @@ public class ParameterData implements Parcelable {
     public ParameterData() {
     }
 
-    public ParameterData(@NonNull String pkgName, String functionId, String otherParams) {
+    public ParameterData(String pkgName, String functionId, String otherParams) {
         this.pkgName = pkgName;
         this.functionId = functionId;
         this.otherParams = otherParams;

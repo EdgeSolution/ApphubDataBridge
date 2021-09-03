@@ -3,8 +3,6 @@ package com.advantech.apphub.databridge.constants;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import androidx.annotation.NonNull;
-
 /**
  * ClassName:   ReportData
  * Description: This class defines a report data format. It is used by SolutionApp to
@@ -42,7 +40,7 @@ public class ReportData implements Parcelable {
     }
 
     //Parcelable impl step 1:   Constructor with Parcel parameter
-    public ReportData(@NonNull String pkgName, String functionId, String content) {
+    public ReportData(String pkgName, String functionId, String content) {
         this.pkgName = pkgName;
         this.functionId = functionId;
         this.content = content;
