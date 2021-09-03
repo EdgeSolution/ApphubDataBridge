@@ -12,7 +12,7 @@ Apphub是一个Android/Linux/Windows设备监控管理部署的解决方案. dat
 # 快速开始
 ## 依赖
 ````
-implementation 'io.github.EdgeSolution:databridge:1.0.1'
+implementation 'io.github.EdgeSolution:databridge:1.0.2'
 ````
 
 ## 实现抽象类

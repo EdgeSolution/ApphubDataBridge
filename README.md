@@ -12,7 +12,7 @@ The project is a development library for apphub databridge local Android applica
 # Quick Start
 ## Dependency
 ````
-implementation 'io.github.EdgeSolution:databridge:1.0.1'
+implementation 'io.github.EdgeSolution:databridge:1.0.2'
 ````
 
 ##  Implement abstract class

@@ -17,7 +17,7 @@ import com.advantech.apphub.databridge.constants.DataBridgeError;
  */
 public abstract class ServiceClientBase {
     private String LOG_TAG = "ServiceClientBase";
-    boolean mIsDebugLogEnabled = false;
+    boolean mIsDebugLogEnabled = true;
 
     void log(String logStr) {
         if (mIsDebugLogEnabled)
